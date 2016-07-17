@@ -5,20 +5,21 @@ function Pizza(name, toppings, dimensions, quantity) {
   this.dimensions= dimensions,
   this.quantity= quantity
 
+
 }
 
 Pizza.prototype.price = function() {
-  var pizzaPrice= this.pizzaPrice;
+var pizzaPrice=0;
 
   if (this.dimensions === "small"){
-    pizzaPrice += 7;
+    (this.pizzaPrice + 7)* this.quantity;
   }else if (this.dimensions === "medium"){
-    pizzaPrice += 12;
+    (this.pizzaPrice + 12)* this.quantity;
   }else if (this.dimensions === "large"){
-    pizzaPrice += 15;
-  };
+    (this.pizzaPrice + 15)* this.quantity;
+  }
 
-  return (this.pizzaPrice * this.quantity);
+
   };
 // user interface logic
 $(document).ready(function() {
@@ -33,13 +34,12 @@ $(document).ready(function() {
     var newPrice= new Pizza(inputtedName,selectedToppings1, selectedToppings2,selectedDimensions,inputtedQuantity);
     newPrice.price();
 
+$(".info").append("<li><span class='prices'>" + newPrice.price() + "</span></li>");
 
 
-
-    // $(".prices").last().click(function() {
+    // $(".info").last().click(function() {
     $("#pizza").show();
     $(".name").text(newPrice.name);
-    $(".toppings").text(newPrice.toppings);
     $(".quantity").text(newPrice.quantity);
     $(".dimensions").text(newPrice.dimensions);
     $(".individualPrice").text(newPrice.pizzaPrice);
@@ -47,5 +47,6 @@ $(document).ready(function() {
 
 
 
-  });
+  // });
+});
 });
