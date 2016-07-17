@@ -7,18 +7,17 @@ function Pizza(name,toppings,size, quantity,price) {
   this.price= price;
 }
 
-Pizza.prototype.Info = function() {
-  return this.name;
-}
 Pizza.prototype.price = function() {
+  var result;
   if (this.size==="small"){
-    return this.price*2;
+    result= this.price*2;
   }else if (this.size==="medium"){
-    return this.price*3;
+    result = this.price*3;
   }else if (this.size==="large"){
-    return this.price*4;
+    result= this.price*4;
   };
-  var total= this.size* this.quantity;
+
+  return result* this.quantity;
   };
 // user interface logic
 $(document).ready(function() {
@@ -30,11 +29,11 @@ $(document).ready(function() {
     var selectedToppings2= $("select#newtoppings2").val();
     var selectedSize= $("select#size").val();
     var inputtedQuantity= $("input#quantity").val();
-    var newPrice= new Pizza(inputtedName,selectedToppings1, selectedtoppings2,selectedSize,inputtedQuantity);
+    var newPrice= new Pizza(inputtedName,selectedToppings1, selectedToppings2,selectedSize,inputtedQuantity);
 
 
     $("#pizza").show();
-    $(".name").text(newPrice.Info());
+    $(".name").text(newPrice.name);
     $(".quantity").text(newPrice.quantity);
     $(".price").text(newPrice.price());
 
