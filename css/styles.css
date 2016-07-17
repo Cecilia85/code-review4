@@ -1,12 +1,16 @@
-#show-price {
-  display: none;
+#pizza{
+  display:none;
 }
-
-.prices {
-  cursor: pointer;
-  color: #0088cc;
+.jumbotron{
+  background-image:linear-gradient(#ffff4d ,transparent 90%),
+  url("../img/pizza.jpeg");
+  background-repeat:repeat;
+  text-align: center;
+  color: #000099;
 }
+.container{
+  width: 70%;
+  margin: 0 auto;
+  color: #000099;
 
-.prices:hover {
-  text-decoration: underline;
 }
