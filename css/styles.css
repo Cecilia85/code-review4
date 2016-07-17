@@ -1,0 +1,12 @@
+#show-price {
+  display: none;
+}
+
+.prices {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.prices:hover {
+  text-decoration: underline;
+}
