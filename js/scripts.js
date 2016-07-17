@@ -2,7 +2,7 @@
 function Pizza(name, toppings, dimensions, quantity) {
   this.name= name,
   this.toppings= toppings,
-  this.dimensions= size,
+  this.dimensions= dimensions,
   this.quantity= quantity
 
 }
@@ -11,11 +11,11 @@ Pizza.prototype.price = function() {
   var pizzaPrice= this.pizzaPrice;
 
   if (this.dimensions === "small"){
-    pizzaPrice * 2;
+    pizzaPrice += 7;
   }else if (this.dimensions === "medium"){
-    pizzaPrice * 3;
+    pizzaPrice += 12;
   }else if (this.dimensions === "large"){
-    pizzaPrice * 4;
+    pizzaPrice += 15;
   };
 
   return (this.pizzaPrice * this.quantity);
@@ -31,6 +31,7 @@ $(document).ready(function() {
     var selectedDimensions= $("select#dimensions").val();
     var inputtedQuantity= parseInt($("input#quantity").val());
     var newPrice= new Pizza(inputtedName,selectedToppings1, selectedToppings2,selectedDimensions,inputtedQuantity);
+    newPrice.price();
 
 
 
