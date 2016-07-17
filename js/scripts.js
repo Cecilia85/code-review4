@@ -8,7 +8,7 @@ function Pizza(name,toppings,size, quantity) {
 }
 
 Pizza.prototype.price = function() {
-  var pizzaPrice;
+  this.pizzaPrice= pizzaPrice;
   if (this.size === "small"){
     pizzaprice * 2;
   }else if (this.size === "medium"){
@@ -17,11 +17,11 @@ Pizza.prototype.price = function() {
     pizzaPrice * 4;
   };
 
-  return (pizzaPrice * this.quantity);
+  return (this.pizzaPrice * this.quantity);
   };
 // user interface logic
 $(document).ready(function() {
-  $("form#Info").submit(function(event) {
+  $("form#pizzaOrder").submit(function(event) {
     event.preventDefault();
 
     var inputtedName = $("input#new-name").val();
@@ -37,6 +37,7 @@ $(document).ready(function() {
     $(".prices").last().click(function() {
     $("#pizza").show();
     $(".name").text(newPrice.name);
+    $(".toppings").text(newPrice.toppings);
     $(".quantity").text(newPrice.quantity);
     $(".price").text(newPrice.price());
 
