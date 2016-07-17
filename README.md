@@ -14,12 +14,12 @@
 <tr>
 <td>User selects toppings 2 </td>
 <td>Ch or B or PIN or SAU (selected)</td>
-<td>Ch or B or PIN or SAU</td>
+<td>Ch or B or PIN or SAU(displayed)</td>
 </tr>
 <tr>
 <td>User selects size</td>
 <td>sm or md or lg  (selected)</td>
-<td>sm or md or lg </td>
+<td>sm or md or lg (displayed)</td>
 </tr>
 <tr>
 <td>User pushes Submit btn</td>
