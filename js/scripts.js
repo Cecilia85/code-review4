@@ -1,10 +1,10 @@
 //business logic
-function Pizza(name, toppings, dimensions, quantity) {
-  this.name= name,
-  this.toppings= toppings,
-  this.dimensions= dimensions,
-  this.quantity= quantity
-
+function Pizza(name, toppings, dimensions, quantity, pizzaPrice) {
+  this.name= name;
+  this.toppings= toppings;
+  this.dimensions= dimensions;
+  this.quantity= quantity;
+  this.pizzaprice= pizzaPrice;
 
 }
 
@@ -12,11 +12,11 @@ Pizza.prototype.price = function() {
 var pizzaPrice=0;
 
   if (this.dimensions === "small"){
-    (this.pizzaPrice + 7)* this.quantity;
+    (pizzaPrice + 7)* this.quantity;
   }else if (this.dimensions === "medium"){
-    (this.pizzaPrice + 12)* this.quantity;
+    (pizzaPrice + 12)* this.quantity;
   }else if (this.dimensions === "large"){
-    (this.pizzaPrice + 15)* this.quantity;
+    (pizzaPrice + 15)* this.quantity;
   }
 
 
@@ -29,9 +29,9 @@ $(document).ready(function() {
     var inputtedName = $("input#new-name").val();
     var selectedToppings1= $("select#new-toppings1").val();
     var selectedToppings2= $("select#new-toppings2").val();
-    var selectedDimensions= $("select#dimensions").val();
-    var inputtedQuantity= parseInt($("input#quantity").val());
-    var newPrice= new Pizza(inputtedName,selectedToppings1, selectedToppings2,selectedDimensions,inputtedQuantity);
+    var selectedDimensions= $("select#new-dimensions").val();
+    var inputtedQuantity= parseInt($("input#new-quantity").val());
+    var newPrice= new Pizza(inputtedName,selectedDimensions,inputtedQuantity);
     newPrice.price();
 
 $(".info").append("<li><span class='prices'>" + newPrice.price() + "</span></li>");
@@ -40,10 +40,10 @@ $(".info").append("<li><span class='prices'>" + newPrice.price() + "</span></li>
     // $(".info").last().click(function() {
     $("#pizza").show();
     $(".name").text(newPrice.name);
-    $(".quantity").text(newPrice.quantity);
     $(".dimensions").text(newPrice.dimensions);
+    $(".quantity").text(newPrice.quantity);
     $(".individualPrice").text(newPrice.pizzaPrice);
-    $(".price").text(newPrice.price());
+    $(".totalPrice").text(newPrice.price());
 
 
 
