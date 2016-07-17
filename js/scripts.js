@@ -1,16 +1,17 @@
 //business logic
-function Pizza(name,toppings,dimensions, quantity) {
-  this.name= name;
-  this.toppings= toppings;
-  this.dimensions= size;
-  this.quantity= quantity;
+function Pizza(name, toppings, dimensions, quantity) {
+  this.name= name,
+  this.toppings= toppings,
+  this.dimensions= size,
+  this.quantity= quantity
 
 }
 
 Pizza.prototype.price = function() {
-  this.pizzaPrice= pizzaPrice;
+  var pizzaPrice= this.pizzaPrice;
+
   if (this.dimensions === "small"){
-    pizzaprice * 2;
+    pizzaPrice * 2;
   }else if (this.dimensions === "medium"){
     pizzaPrice * 3;
   }else if (this.dimensions === "large"){
@@ -39,9 +40,11 @@ $(document).ready(function() {
     $(".name").text(newPrice.name);
     $(".toppings").text(newPrice.toppings);
     $(".quantity").text(newPrice.quantity);
+    $(".dimensions").text(newPrice.dimensions);
+    $(".individualPrice").text(newPrice.pizzaPrice);
     $(".price").text(newPrice.price());
 
-});
+
 
   });
 });
