@@ -1,10 +1,10 @@
 //business logic
-function Pizza(name, toppings, dimensions, quantity, pizzaPrice) {
+function Pizza(name, toppings, dimensions, quantity) {
   this.name= name;
   this.toppings= toppings;
   this.dimensions= dimensions;
   this.quantity= quantity;
-  this.pizzaprice= pizzaPrice;
+
 
 }
 
@@ -12,13 +12,13 @@ Pizza.prototype.price = function() {
 var pizzaPrice=0;
 
   if (this.dimensions === "small"){
-    (pizzaPrice + 7)* this.quantity;
+    (pizzaPrice + 7);
   }else if (this.dimensions === "medium"){
-    (pizzaPrice + 12)* this.quantity;
+    (pizzaPrice + 12);
   }else if (this.dimensions === "large"){
-    (pizzaPrice + 15)* this.quantity;
+    (pizzaPrice + 15);
   }
-
+var totalPrice= this.pizzaPrice*this.quantity;
 
   };
 // user interface logic
@@ -32,7 +32,7 @@ $(document).ready(function() {
     var selectedDimensions= $("select#new-dimensions").val();
     var inputtedQuantity= parseInt($("input#new-quantity").val());
     var newPrice= new Pizza(inputtedName,selectedDimensions,inputtedQuantity);
-    newPrice.price();
+    newPrice.price();newPrice.pizzaPrize;
 
 $(".info").append("<li><span class='prices'>" + newPrice.price() + "</span></li>");
 
