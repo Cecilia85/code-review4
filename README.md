@@ -7,14 +7,14 @@
 <td>OUTPUT</td>
 </tr>
 <tr>
-<td>User selects toppings 1 </td>
-<td>C or P or ART or AN (selected)</td>
-<td>C or P or ART or AN</td>
+<td>User Inputs name </td>
+<td>Cecilia </td>
+<td>Cecilia (displayed)</td>
 </tr>
 <tr>
-<td>User selects toppings 2 </td>
-<td>Ch or B or PIN or SAU (selected)</td>
-<td>Ch or B or PIN or SAU(displayed)</td>
+<td>User selects one or more toppings </td>
+<td>Pepperoni, Chesse, Italian sausage, Anchovy, Mushrooms, Bacon, Chicken, Onion, Olives, Peppers</td>
+<td>toppings(displayed)</td>
 </tr>
 <tr>
 <td>User selects size</td>
