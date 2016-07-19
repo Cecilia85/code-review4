@@ -1,53 +1,62 @@
 //business logic
-function Pizza(name, toppings1,toppings2, dimensions, quantity) {
+function Pizza(name, toppings, dimensions, quantity, totalPrice) {
   this.name= name;
-  this.toppings1= toppings1;
-  this.toppings2= toppings2;
+  this.toppings= toppings
   this.dimensions= dimensions;
   this.quantity= quantity;
-
+  this.totalPrice= totalPrice;
 
 }
 
-Pizza.prototype.price = function() {
-var pizzaPrice=0;
 
-  if (this.dimensions === "small"){
-    pizzaPrice += 7;
+Pizza.prototype.price = function() {
+var pizzaPrice = 0;
+
+
+  if (this.dimensions === "small" ){
+    pizzaPrice += 7 ;
   } else if (this.dimensions === "medium"){
-    pizzaPrice += 12;
-  } else if (this.dimensions === "large"){
-    pizzaPrice += 15;
+    pizzaPrice += 12 ;
+  } else if (this.dimensions === "large" ){
+    pizzaPrice += 15 ;
   }
 
+  return totalPrice= ("$"+ pizzaPrice * this.quantity);
 
   };
-  var totalPrice= this.pizzaPrice * this.quantity;
+
+
+
+
 // user interface logic
 $(document).ready(function() {
   $("form#pizzaOrder").submit(function(event) {
     event.preventDefault();
 
     var inputtedName = $("input#new-name").val();
-    var selectedToppings1= $("select#new-toppings1").val();
-    var selectedToppings2= $("select#new-toppings2").val();
+    var checkedToppings= [];
+    $(":checkbox:checked").each(function(topping){
+      checkedToppings[topping] = $(this).val();
+    });
     var selectedDimensions= $("select#new-dimensions").val();
     var inputtedQuantity= parseInt($("input#new-quantity").val());
-    var newPizza= new Pizza(inputtedName,selectedToppings1,selectedToppings2,selectedDimensions,inputtedQuantity);
-    console.log(newPizza);
-    newPizza.price();newPizza.pizzaPrice;
+    var newPizza= new Pizza(inputtedName,checkedToppings ,selectedDimensions,inputtedQuantity);
+    newPizza.totalPrice= newPizza.price();
 
-$(".info").append("<li><span class='prices'>" + newPizza.price() + "</span></li>");
 
+
+    // newPizza.price();newPizza.totalPrice;
+console.log(newPizza);
 
     // $(".info").last().click(function() {
     $("#pizza").show();
     $(".name").text(newPizza.name);
+    $(".toppings").text(newPizza.toppings);
     $(".dimensions").text(newPizza.dimensions);
     $(".quantity").text(newPizza.quantity);
-    $(".individualPrice").text(newPizza.pizzaPrice);
     $(".totalPrice").text(newPizza.totalPrice);
-console.log(newPizza.price());
+
+
 
 
   // });

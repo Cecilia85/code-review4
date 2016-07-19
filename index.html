@@ -21,24 +21,37 @@
               <input type="text" class="form-control" id="new-name">
             </div>
           <h3>Select toppings</h3>
-            <div class="form-group">
-                  <label for="new-toppings-1">First round of toppings</label>
-                  <select class="form-control" id="new-toppings-1">
-                    <option>cheese</option>
-                    <option>pepperoni</option>
-                    <option>artichoke</option>
-                    <option>anchovy</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                      <label for="new-toppings-2">Second round of toppings</label>
-                      <select class="form-control" id="new-toppings-2">
-                        <option>chicken</option>
-                        <option>bacon</option>
-                        <option>pineapple</option>
-                        <option>sausage</option>
-                      </select>
-                    </div>
+          <label for="new-toppings">Toppings</label>
+          <div class="checkbox">
+            <label><input type="checkbox" value="pepperoni">Pepperoni</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="cheese">Cheese</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="italian sausage">Italian sausage</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="anchovy">Anchovy</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="mushrooms">Mushrooms</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="bacon">Bacon</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="chicken">Chicken</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="onion">Onion</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="olives">Olives</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="peppers">Peppers</label>
+          </div>
           <h3>Select Size</h3>
                 <div class="form-group">
                       <label for="new-dimensions">Select your Size</label>
@@ -59,15 +72,14 @@
                   </div>
                   <div class="row">
                     <div class= "col-md-6">
-                    <ul class="info">
-                    </ul>
+
                             <div id="pizza">
                               <h3>Your Order:</h3>
-                              <p>Name: <span class="name"></span></p>
-                              <p>Dimensions: <span class= "dimensions"><span></p>
-                              <p>Quantity: <span class="quantity"></span></p>
-                              <p>Individual Price: <span class= "individualPrice"><span></p>
-                              <p>Total price: <span class="totalPrice"></p>
+                              <p><b>Name: </b> <span class="name"></span></p>
+                              <p><b>Toppings: </b> <span class= "toppings"></span></p>
+                              <p><b>Dimensions: </b> <span class= "dimensions"><span></p>
+                              <p><b>Quantity: </b> <span class="quantity"></span></p>
+                              <p><b>Total price: </b><span class="totalPrice"></p>
                             </div>
                           </div>
                         </div>
